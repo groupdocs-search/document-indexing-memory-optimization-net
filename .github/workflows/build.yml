@@ -1,0 +1,60 @@
+name: build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore DocumentIndexingMemoryOptimization.sln
+
+      - name: Build
+        run: dotnet build DocumentIndexingMemoryOptimization.sln --configuration Release --no-restore
+
+      # NOTE: the samples are intentionally NOT executed in CI.
+      # They require a document corpus (hundreds of thousands of real files) and a
+      # GroupDocs licence, neither of which exists on a hosted runner. Running them
+      # here would either fail or - worse - produce trial-capped numbers that look
+      # real but measure nothing. Compilation is what CI can honestly verify.
+      - name: Verify samples start and fail cleanly without configuration
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          set +e
+          output=$(dotnet run --project samples/Sample01.PerDocument --configuration Release --no-build 2>&1)
+          status=$?
+          echo "$output"
+          if [ $status -eq 0 ]; then
+            echo "::error::Sample unexpectedly succeeded without a configured document storage path."
+            exit 1
+          fi
+          # Grep for a token only OUR error emits. ".NET's own "The application to
+          # execute does not exist" also contains "does not exist" and also exits
+          # non-zero, so the looser pattern would turn a broken build into a green check.
+          if echo "$output" | grep -q "INDEXING_LAB_STORAGE_ROOT"; then
+            echo "Sample failed with the expected actionable error."
+            exit 0
+          fi
+          echo "::error::Sample failed, but not with the expected configuration error."
+          exit 1

@@ -1,0 +1,22 @@
+{
+  "name": "document-indexing-memory-optimization-net",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:1-8.0",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csdevkit",
+        "editorconfig.editorconfig"
+      ]
+    }
+  },
+  "postCreateCommand": "dotnet restore DocumentIndexingMemoryOptimization.sln",
+  "remoteEnv": {
+    // Point these at your own corpus and licence to run the samples in the container.
+    // The samples build here, but cannot produce meaningful numbers without both.
+    "INDEXING_LAB_STORAGE_ROOT": "${localEnv:INDEXING_LAB_STORAGE_ROOT}",
+    "GROUPDOCS_LIC_PATH": "${localEnv:GROUPDOCS_LIC_PATH}"
+  }
+}

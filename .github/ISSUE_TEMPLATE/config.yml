@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GroupDocs.Search product support
+    url: https://forum.groupdocs.com/c/search
+    about: Questions about GroupDocs.Search itself (indexing, search, licensing) belong on the product forum, not here.
+  - name: Purchase and licensing
+    url: https://purchase.groupdocs.com/
+    about: Licence keys, trial limits and pricing.

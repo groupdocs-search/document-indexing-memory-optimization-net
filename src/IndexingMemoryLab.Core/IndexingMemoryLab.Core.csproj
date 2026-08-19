@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>IndexingMemoryLab.Core</RootNamespace>
+    <AssemblyName>IndexingMemoryLab.Core</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GroupDocs.Search" />
+  </ItemGroup>
+
+</Project>

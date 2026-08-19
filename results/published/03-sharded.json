@@ -1,0 +1,75 @@
+{
+  "manifest": {
+    "SampleName": "03-sharded",
+    "RunUtc": "2026-08-19T13:20:49.9479396Z",
+    "GroupDocsSearchVersion": "26.8.0.0",
+    "RuntimeVersion": ".NET 8.0.29",
+    "OperatingSystem": "Microsoft Windows 10.0.26200",
+    "ProcessArchitecture": "X64",
+    "BuildConfiguration": "Release",
+    "IsServerGC": false,
+    "IsLicensed": true,
+    "IndexType": "NormalIndex",
+    "IndexingThreads": 1,
+    "DocumentsRequested": 60,
+    "DocumentsSelected": 60,
+    "DocumentsIndexed": 60,
+    "ExtractionErrors": 0,
+    "DocumentSetHash": "90469DEB7BF0180FA85460D7CCCDEADEADE35A40CF0C370313BAACCDC04F23FD",
+    "VerificationQuery": "information",
+    "VerificationDocumentCount": 24,
+    "VerificationOccurrenceCount": 121
+  },
+  "totals": {
+    "Documents": 60,
+    "TotalAllocatedBytes": 7349598648,
+    "PeakPrivateBytes": 4595113984,
+    "RetainedManagedHeapBytes": 48531776,
+    "RetainedLargeObjectHeapBytes": 182960464,
+    "BuildSeconds": 26.6373456
+  },
+  "samples": [
+    {
+      "Step": 1,
+      "Label": "shard 1/3",
+      "DocumentsProcessed": 20,
+      "AllocatedSinceStartBytes": 1965670128,
+      "AllocatedThisStepBytes": 1965670128,
+      "ManagedHeapBytes": 1655307808,
+      "PrivateBytes": 1726840832,
+      "LargeObjectHeapBytes": 1601735288,
+      "Gen0Collections": 34,
+      "Gen1Collections": 20,
+      "Gen2Collections": 14,
+      "ElapsedSeconds": 7.2852353
+    },
+    {
+      "Step": 2,
+      "Label": "shard 2/3",
+      "DocumentsProcessed": 40,
+      "AllocatedSinceStartBytes": 3888509544,
+      "AllocatedThisStepBytes": 1922839416,
+      "ManagedHeapBytes": 1737983960,
+      "PrivateBytes": 3356487680,
+      "LargeObjectHeapBytes": 1968000728,
+      "Gen0Collections": 50,
+      "Gen1Collections": 26,
+      "Gen2Collections": 15,
+      "ElapsedSeconds": 14.9882094
+    },
+    {
+      "Step": 3,
+      "Label": "shard 3/3",
+      "DocumentsProcessed": 60,
+      "AllocatedSinceStartBytes": 7349598648,
+      "AllocatedThisStepBytes": 3461089104,
+      "ManagedHeapBytes": 1747044488,
+      "PrivateBytes": 2181439488,
+      "LargeObjectHeapBytes": 1736710872,
+      "Gen0Collections": 175,
+      "Gen1Collections": 72,
+      "Gen2Collections": 20,
+      "ElapsedSeconds": 26.6363932
+    }
+  ]
+}

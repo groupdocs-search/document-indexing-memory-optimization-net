@@ -1,0 +1,68 @@
+name: Measurement report
+description: Share numbers you measured on your own corpus, or report numbers that differ from the published table.
+title: "[measurement] "
+labels: ["measurement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Measurements from other corpora are the most useful contribution this repo can receive.
+        Please include the full summary block each sample prints, not just the headline figure.
+
+  - type: input
+    id: version
+    attributes:
+      label: GroupDocs.Search version
+      placeholder: "26.8.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: configuration
+    attributes:
+      label: Build configuration
+      options: [Debug, Release]
+    validations:
+      required: true
+
+  - type: input
+    id: runtime
+    attributes:
+      label: Runtime and OS
+      placeholder: ".NET 8.0.11, Windows 11 x64"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: gc
+    attributes:
+      label: GC mode
+      options: [Workstation (default), Server]
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: licensed
+    attributes:
+      label: Licence
+      description: An unlicensed run is capped and its numbers are not meaningful.
+      options:
+        - label: "The samples printed `license: applied`"
+          required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Sample output
+      description: Paste the summary block from each sample you ran.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: corpus
+    attributes:
+      label: Corpus description
+      placeholder: "60 documents, mixed HTML/PDF/DOCX, average 200 KB"
+    validations:
+      required: true

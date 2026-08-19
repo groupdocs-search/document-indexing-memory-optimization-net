@@ -1,0 +1,47 @@
+{
+  "manifest": {
+    "SampleName": "02-batched",
+    "RunUtc": "2026-08-19T13:19:50.4826081Z",
+    "GroupDocsSearchVersion": "26.8.0.0",
+    "RuntimeVersion": ".NET 8.0.29",
+    "OperatingSystem": "Microsoft Windows 10.0.26200",
+    "ProcessArchitecture": "X64",
+    "BuildConfiguration": "Release",
+    "IsServerGC": false,
+    "IsLicensed": true,
+    "IndexType": "NormalIndex",
+    "IndexingThreads": 1,
+    "DocumentsRequested": 60,
+    "DocumentsSelected": 60,
+    "DocumentsIndexed": 60,
+    "ExtractionErrors": 0,
+    "DocumentSetHash": "90469DEB7BF0180FA85460D7CCCDEADEADE35A40CF0C370313BAACCDC04F23FD",
+    "VerificationQuery": "information",
+    "VerificationDocumentCount": 24,
+    "VerificationOccurrenceCount": 121
+  },
+  "totals": {
+    "Documents": 60,
+    "TotalAllocatedBytes": 4018822712,
+    "PeakPrivateBytes": 1932210176,
+    "RetainedManagedHeapBytes": 71304808,
+    "RetainedLargeObjectHeapBytes": 1530674152,
+    "BuildSeconds": 31.4329751
+  },
+  "samples": [
+    {
+      "Step": 1,
+      "Label": "batch 1/1",
+      "DocumentsProcessed": 60,
+      "AllocatedSinceStartBytes": 4018822712,
+      "AllocatedThisStepBytes": 4018822712,
+      "ManagedHeapBytes": 1809772064,
+      "PrivateBytes": 1937985536,
+      "LargeObjectHeapBytes": 1672323984,
+      "Gen0Collections": 173,
+      "Gen1Collections": 68,
+      "Gen2Collections": 20,
+      "ElapsedSeconds": 31.4314826
+    }
+  ]
+}
