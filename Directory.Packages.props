@@ -7,7 +7,7 @@
 
   <!-- One place to bump the product version for every project in the solution. -->
   <ItemGroup>
-    <PackageVersion Include="GroupDocs.Search" Version="26.8.0" />
+    <PackageVersion Include="GroupDocs.Search" Version="26.10.0" />
   </ItemGroup>
 
 </Project>
